@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import Todo from './Todo';
-//import FormEdit from './FormEdit';
+import './TodoApp.css';
 
 const TodoApp = () => {
     const [title, setTitle] = useState('');
@@ -30,6 +30,11 @@ const TodoApp = () => {
         setTodos(temp)
     }
 
+    const handleDelete = (id) => {
+        const temp = todos.filter( item => item.id !== id);
+        setTodos(temp);
+    }
+
   return (
     <div className='todoContainer'> {/* esto podria ser un <Card>  */}
         {/* Todoform Component, si es posible dentro de components card */}
@@ -47,9 +52,9 @@ const TodoApp = () => {
             />
         </form>
         {/* Todolist Component, si es posible dentro de components card */}
-        <div className='todosContiner'>
+        <div className='todosContainer'>
                 {todos.map(item => (
-                    <Todo key={item.id} item={item} onUpdate={handleUpdate}/>
+                    <Todo key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}/>
                 ))}
         </div> 
     </div>

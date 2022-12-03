@@ -1,13 +1,37 @@
 import React, {useState} from 'react';
 import FormEdit from './FormEdit';
 import TodoElement from './TodoElement';
+import './Todo.css'
 
-function Todo({item, onUpdate, onEdit}) {
+function Todo({item, onUpdate, onDelete}) {
     const [isEdit, setIsEdit] = useState(false);
 
-    
+    const handlesSetEdit = (value) => {
+      setIsEdit(value)
+    }
 
-    /*const FormEdit = () => {
+  return (
+    <diV className='todo'>
+      {isEdit ? (<FormEdit 
+                    item={item} 
+                    onEdit={handlesSetEdit} 
+                    onUpdateTodo={onUpdate} 
+                />) 
+                : 
+                (<TodoElement 
+                  item={item} 
+                  onEdit={handlesSetEdit}
+                  onDeleteTodo={onDelete} 
+                />)
+      }
+    </diV>
+    
+  )
+} 
+
+export default Todo;
+
+/*const FormEdit = () => {
       const [newValue, setNewValue] = useState(item.title);
 
       const handleSubmit = (e) => {
@@ -49,27 +73,5 @@ function Todo({item, onUpdate, onEdit}) {
           <button >Delete</button>
         </div>
       );
-    }*/
-    const handlesSetEdit = (value) => {
-      setIsEdit(value)
     }
-
-  return (
-    <diV className='todo'>
-      {isEdit ? (<FormEdit 
-                    item={item} 
-                    onEdit={handlesSetEdit} 
-                    onUpdateTodo={onUpdate} 
-                />) 
-                : 
-                (<TodoElement 
-                  item={item} 
-                  onEdit={handlesSetEdit}
-                />)
-      }
-    </diV>
-    
-  )
-} 
-
-export default Todo;
+    */

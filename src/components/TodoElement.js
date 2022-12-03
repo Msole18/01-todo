@@ -1,5 +1,5 @@
 import React from "react";
-
+import './TodoElement.css';
 
 const TodoElement = ({item, onEdit, onDeleteTodo}) => {
     const handleEditClick = (e) => {
@@ -7,15 +7,11 @@ const TodoElement = ({item, onEdit, onDeleteTodo}) => {
       onEdit(true);
     }
 
-    const handleDelete = (id) => {
-      onUpdateTodo(item.id, newValue)
-      onEdit(false);
-    }
-
     return (
       <div className='todoInfo'>
-        {item.title} <button onClick={handleEditClick} >Edit</button>
-        <button className="button" onDeleteTodo={handleDelete}>Delete</button>
+        <span className="todoTitle">{item.title}</span>
+        <button className="button" onClick={handleEditClick} >Edit</button>
+        <button className="buttonDelete" onClick={(e) =>onDeleteTodo(item.id)}>Delete</button>
       </div>
     );
 }

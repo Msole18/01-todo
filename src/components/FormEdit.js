@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './FormEdit.css';
 
 const FormEdit = ({item, onUpdateTodo, onEdit}) => {
     const [newValue, setNewValue] = useState(item.title);

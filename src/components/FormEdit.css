@@ -1,0 +1,13 @@
+.todoUpdeteForm {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.button {
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(72, 122, 211);
+    color: white;
+    padding:10px 20px;
+}

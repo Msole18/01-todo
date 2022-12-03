@@ -1,0 +1,27 @@
+.todoTitle {
+    flex:1;
+    font-size: 20px;
+}
+
+.todoInfo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.button {
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(72, 122, 211);
+    color: white;
+    padding:10px 20px;
+}
+
+
+.buttonDelete {
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(169, 26, 26);
+    color: white;
+    padding:10px 20px;
+}
